@@ -7,13 +7,23 @@
     android:orientation="horizontal"
     tools:context=".MainActivity">
 
-    <fragment
-        class="agustinreinoso.altice.com.itemhunter.views.ProductCreationFragment"
-        android:layout_width="0dp"
+    <android.support.design.widget.TabLayout
+        android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_weight="1"
-        android:id="@+id/frag"
-        tools:layout="@layout/fragment_product_creation">
+        app:tabGravity="fill"
+        app:tabMode="fixed">
 
-    </fragment>
+
+    </android.support.design.widget.TabLayout>
+
+    <!-- <fragment
+            class="agustinreinoso.altice.com.itemhunter.views.ProductCreationFragment"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:id="@+id/frag"
+            tools:layout="@layout/fragment_product_creation">
+
+        </fragment>
+    -->
 </LinearLayout>
