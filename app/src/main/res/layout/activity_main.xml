@@ -8,12 +8,12 @@
     tools:context=".MainActivity">
 
     <fragment
-        class="agustinreinoso.altice.com.itemhunter.views.ProductCreationFragment"
+        class="agustinreinoso.altice.com.itemhunter.views.UserProfileFragment"
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_weight="1"
         android:id="@+id/frag"
-        tools:layout="@layout/fragment_product_creation">
+        tools:layout="@layout/fragment_user_profile">
 
     </fragment>
 </LinearLayout>

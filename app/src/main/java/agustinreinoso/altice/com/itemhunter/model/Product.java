@@ -4,6 +4,16 @@ public class Product {
     private String description;
     private String imageUrl;
     private String author;
+    private  int ratings;
+
+    public int getRatings() {
+        return ratings;
+    }
+
+    public void setRatings(int ratings) {
+        this.ratings = ratings;
+    }
+
     private String category;
     private String lat;
     private String lng;
