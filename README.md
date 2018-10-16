@@ -8,6 +8,7 @@ Este es el proyecto final del curso de Android de  avanzado de Altice ,el mismo 
 * [Gradle](https://gradle.org/) - Controlador de dependencia.
 * [Firebase](https://firebase.google.com/docs/) - Manejo de persistencia de Imagenes y demas.
 * [Glide](https://bumptech.github.io/glide/) - Manejo de Imagenes.
+* [Android Architecture Components](https://developer.android.com/topic/libraries/architecture/) - Arquitectura de Desarrollo del Proyecto.
 
 
 
