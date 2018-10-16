@@ -1,28 +1,28 @@
 package agustinreinoso.altice.com.itemhunter.model;
 
 public class User {
-private String username;
-private String url;
+private String mUsername;
+private String mUrl;
 
-    public User(String username, String url) {
-        this.username = username;
-        this.url = url;
+
+    public User(String mUsername, String mUrl) {
+        this.mUsername = mUsername;
+        this.mUrl = mUrl;
     }
 
-
-    public String getUsername() {
-        return username;
+    public String getmUsername() {
+        return mUsername;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
+    public void setmUsername(String mUsername) {
+        this.mUsername = mUsername;
     }
 
-    public String getUrl() {
-        return url;
+    public String getmUrl() {
+        return mUrl;
     }
 
-    public void setUrl(String url) {
-        this.url = url;
+    public void setmUrl(String mUrl) {
+        this.mUrl = mUrl;
     }
 }
