@@ -8,5 +8,5 @@ public interface ProductRepository {
 
     boolean addProduct(Product product);
     List<Product> getProductsByCategories(String [] category);
-
+     boolean deleteProduct(Product product);
 }

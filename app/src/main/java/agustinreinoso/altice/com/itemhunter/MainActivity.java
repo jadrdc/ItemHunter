@@ -6,6 +6,7 @@ import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.Menu;
 
 import agustinreinoso.altice.com.itemhunter.adapters.ViewPagerFragmentAdapter;
 import agustinreinoso.altice.com.itemhunter.dao.ProductFireBaseRepository;
@@ -39,4 +40,6 @@ public class MainActivity extends AppCompatActivity {
 
         productViewModel = ViewModelProviders.of(this).get(ProductViewModel.class);
     }
+
+
 }

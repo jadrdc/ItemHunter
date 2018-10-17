@@ -1,25 +1,27 @@
 package agustinreinoso.altice.com.itemhunter.model;
 
+import android.net.Uri;
+
 public class Product {
     private String mName;
     private String mDescription;
     private String mImageUrl;
     private String mAuthor;
     private int mRatings;
+
+    public Uri getmUri() {
+        return mUri;
+    }
+
+    public void setmUri(Uri mUri) {
+        this.mUri = mUri;
+    }
+
+    private Uri mUri;
     private String mCategory;
     private String mLat;
     private String mLng;
 
-    public Product(String mName, String mDescription, String mImageUrl, String mAuthor, int mRatings, String mCategory, String mLat, String mLng) {
-        this.mName = mName;
-        this.mDescription = mDescription;
-        this.mImageUrl = mImageUrl;
-        this.mAuthor = mAuthor;
-        this.mRatings = mRatings;
-        this.mCategory = mCategory;
-        this.mLat = mLat;
-        this.mLng = mLng;
-    }
 
     public String getmName() {
         return mName;

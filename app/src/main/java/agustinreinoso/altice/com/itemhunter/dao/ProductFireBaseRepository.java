@@ -29,6 +29,10 @@ public class ProductFireBaseRepository implements ProductRepository {
         mStorageReference = FirebaseStorage.getInstance().getReference(PRODUCT_IMAGE_ROOT);
     }
 
+    @Override
+    public boolean deleteProduct(Product product) {
+        return false;
+    }
 
     @Override
     public boolean addProduct(Product product) {
