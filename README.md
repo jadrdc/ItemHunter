@@ -6,7 +6,7 @@ Este es el proyecto final del curso de Android de  avanzado de Altice ,el mismo 
 
 * [Dagger](https://google.github.io/dagger/users-guide) -Libreria usada para implementar Inyeccion de Dependencia.
 * [Gradle](https://gradle.org/) - Controlador de dependencia.
-* [Google Play Services Fusedlocationprovider](https://developers.google.com/location-context/fused-location-provider/) - Servicio de google play services para el manejo de las coordenadas.
+* [Google Play Services Fused Location Provider](https://developers.google.com/location-context/fused-location-provider/) - Servicio de google play services para el manejo de las coordenadas.
 * [Firebase](https://firebase.google.com/docs/) - Manejo de persistencia de Imagenes y demas.
 * [Picasso](http://square.github.io/picasso/) - Manejo de Imagenes.
 * [Android Architecture Components](https://developer.android.com/topic/libraries/architecture/) - Arquitectura de Desarrollo del Proyecto.
