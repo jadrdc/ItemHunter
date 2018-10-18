@@ -24,7 +24,7 @@ public class ProductViewModel extends ViewModel {
         new Thread(new Runnable() {
             @Override
             public void run() {
-                mRepostory.addProduct(product);
+             mRepostory.addProduct(product);
             }
         }).start();
 

@@ -19,9 +19,10 @@ import agustinreinoso.altice.com.itemhunter.utils.ConfigSetting;
 import static agustinreinoso.altice.com.itemhunter.utils.ConfigSetting.PRODUCT_IMAGE_ROOT;
 
 public class ProductFireBaseRepository implements ProductRepository {
-    private FirebaseDatabase mDatabase;
-    private DatabaseReference mReference;
-    private StorageReference mStorageReference;
+
+    private static FirebaseDatabase mDatabase;
+    private static  DatabaseReference mReference;
+    private static StorageReference mStorageReference;
 
     public ProductFireBaseRepository() {
         mDatabase = FirebaseDatabase.getInstance();
