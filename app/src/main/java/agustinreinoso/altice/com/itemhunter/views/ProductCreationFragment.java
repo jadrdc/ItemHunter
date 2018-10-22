@@ -35,7 +35,6 @@ import android.widget.Toast;
 
 import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.location.LocationServices;
-import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 
@@ -47,6 +46,7 @@ import java.util.UUID;
 
 import agustinreinoso.altice.com.itemhunter.R;
 import agustinreinoso.altice.com.itemhunter.model.Product;
+import agustinreinoso.altice.com.itemhunter.dto.ProductDTO;
 import agustinreinoso.altice.com.itemhunter.viewmodels.ProductViewModel;
 
 import static android.widget.Toast.makeText;
@@ -65,10 +65,6 @@ public class ProductCreationFragment extends Fragment {
     private double mLng;
     private double mLat;
 
-    /*
-        private File file;
-        private Uri fileUri;
-    */
     public ProductCreationFragment() {
         // Required empty public constructor
 
@@ -98,6 +94,7 @@ public class ProductCreationFragment extends Fragment {
 
     }
 
+    boolean flag;
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -106,13 +103,27 @@ public class ProductCreationFragment extends Fragment {
             case R.id.option_take_picture: {
                 StrictMode.VmPolicy.Builder builder = new StrictMode.VmPolicy.Builder();
                 StrictMode.setVmPolicy(builder.build());
-                Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-                if (takePictureIntent.resolveActivity(getActivity().getPackageManager()) != null) {
-                    File file = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES);
-                    mOutput = new File(file, new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date()) + ".png");
-                    startActivityForResult(takePictureIntent, REQUEST_IMAGE_CAPTURE);
+
+
+                if (ActivityCompat.checkSelfPermission(getActivity(), Manifest.permission.WRITE_EXTERNAL_STORAGE) !=
+                        PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(getActivity(), Manifest.permission.WRITE_EXTERNAL_STORAGE)
+                        != PackageManager.PERMISSION_GRANTED) {
+                    ActivityCompat.requestPermissions(getActivity(),
+                            new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE},
+                            1);
+
+                    ActivityCompat.requestPermissions(getActivity(),
+                            new String[]{Manifest.permission.READ_EXTERNAL_STORAGE},
+                            1);
+
                 }
 
+                Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+                if (takePictureIntent.resolveActivity(getActivity().getPackageManager()) != null) {
+                    createFile();
+                    takePictureIntent.putExtra(MediaStore.EXTRA_OUTPUT, Uri.fromFile(mOutput));
+                    startActivityForResult(takePictureIntent, REQUEST_IMAGE_CAPTURE);
+                }
                 return true;
             }
             case R.id.optiosave: {
@@ -126,8 +137,6 @@ public class ProductCreationFragment extends Fragment {
                     product.setmCategory(mSpnCategory.getSelectedItem().toString());
                     product.setmImageUrl(Uri.fromFile(mOutput).toString());
                     product.setmAuthor("Jadrdc");
-                    product.setmUri(Uri.fromFile(mOutput));
-
                     if (ActivityCompat.checkSelfPermission(getActivity(), Manifest.permission.ACCESS_FINE_LOCATION) !=
                             PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(getActivity(), Manifest.permission.ACCESS_COARSE_LOCATION)
                             != PackageManager.PERMISSION_GRANTED) {
@@ -145,12 +154,15 @@ public class ProductCreationFragment extends Fragment {
                         public void onSuccess(Location location) {
                             product.setmLat(String.valueOf(location.getLatitude()));
                             product.setmLng(String.valueOf(location.getLongitude()));
-                            mProductViewModel.addProduct(product);
+
+                            ProductDTO productDTO = new ProductDTO();
+                            productDTO.setmProduct(product);
+                            productDTO.setmUri(Uri.fromFile(mOutput));
+
+                            mProductViewModel.addProduct(productDTO);
 
                         }
                     });
-
-
                 }
                 return true;
             }
@@ -169,6 +181,15 @@ public class ProductCreationFragment extends Fragment {
     }
 
 
+    private void createFile() {
+        File file = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES);
+        mOutput = new File(file, "/" + new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date()) + ".png");
+        try {
+            flag = mOutput.createNewFile();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 }
 
 

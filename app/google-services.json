@@ -1,21 +1,21 @@
 {
   "project_info": {
-    "project_number": "952885247828",
-    "firebase_url": "https://itemhunter-3507d.firebaseio.com",
-    "project_id": "itemhunter-3507d",
-    "storage_bucket": "itemhunter-3507d.appspot.com"
+    "project_number": "1041959045598",
+    "firebase_url": "https://itemhunter-fa228.firebaseio.com",
+    "project_id": "itemhunter-fa228",
+    "storage_bucket": "itemhunter-fa228.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:952885247828:android:4b796dda5df7e405",
+        "mobilesdk_app_id": "1:1041959045598:android:4b796dda5df7e405",
         "android_client_info": {
           "package_name": "agustinreinoso.altice.com.itemhunter"
         }
       },
       "oauth_client": [
         {
-          "client_id": "952885247828-8h95jb20qc3jhmrafinl09avlu6vvqcv.apps.googleusercontent.com",
+          "client_id": "1041959045598-68qvljrs9hudfg3g4gh2gms4gvma0ck2.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "agustinreinoso.altice.com.itemhunter",
@@ -23,13 +23,13 @@
           }
         },
         {
-          "client_id": "952885247828-a44krqd3q5uu2815p3b4ueoqn8gsm6n7.apps.googleusercontent.com",
+          "client_id": "1041959045598-l15342ugoi9v8h9c5qn7tdr7egoehrrc.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyCKl-PPLXuRyGlATUzbJwjrNQANWG06OXA"
+          "current_key": "AIzaSyB9B3UUG0BZb6eAL4HWS-E-kps028Rh-OE"
         }
       ],
       "services": {
@@ -40,7 +40,7 @@
           "status": 2,
           "other_platform_oauth_client": [
             {
-              "client_id": "952885247828-a44krqd3q5uu2815p3b4ueoqn8gsm6n7.apps.googleusercontent.com",
+              "client_id": "1041959045598-l15342ugoi9v8h9c5qn7tdr7egoehrrc.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

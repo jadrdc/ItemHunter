@@ -9,16 +9,16 @@ public class Product {
     private String mAuthor;
     private int mRatings;
 
-    public Uri getmUri() {
-        return mUri;
-    }
+    /*    public Uri getmUri() {
+            return mUri;
+        }
 
-    public void setmUri(Uri mUri) {
-        this.mUri = mUri;
-    }
+        public void setmUri(Uri mUri) {
+            this.mUri = mUri;
+        }
 
-    private Uri mUri;
-    private String mCategory;
+        private Uri mUri;
+        */private String mCategory;
     private String mLat;
     private String mLng;
 
