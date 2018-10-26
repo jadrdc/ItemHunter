@@ -9,7 +9,7 @@ Este es el proyecto final del curso de Android de  avanzado de Altice ,el mismo 
 * [Google Play Services Fused Location Provider](https://developers.google.com/location-context/fused-location-provider/) - Servicio de google play services para el manejo de las coordenadas.
 * [Firebase](https://firebase.google.com/docs/) - Manejo de persistencia de Imagenes y demas.
 * [Picasso](http://square.github.io/picasso/) - Manejo de Imagenes.
-* [Android Architecture Components](https://developer.android.com/topic/libraries/architecture/) - Arquitectura de Desarrollo del Proyecto.
+* [Android JetPack](https://developer.android.com/jetpack/) - Arquitectura de Desarrollo del Proyecto.
 
 
 
