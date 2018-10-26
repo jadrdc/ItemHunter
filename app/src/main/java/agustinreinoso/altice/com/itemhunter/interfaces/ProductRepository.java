@@ -2,8 +2,6 @@ package agustinreinoso.altice.com.itemhunter.interfaces;
 
 import android.net.Uri;
 
-import java.util.List;
-
 import agustinreinoso.altice.com.itemhunter.model.Product;
 
 public interface ProductRepository {

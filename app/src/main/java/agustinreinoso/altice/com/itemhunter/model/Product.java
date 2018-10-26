@@ -1,7 +1,5 @@
 package agustinreinoso.altice.com.itemhunter.model;
 
-import android.net.Uri;
-
 public class Product {
     private String mName;
     private String mDescription;
