@@ -1,4 +1,4 @@
-package agustinreinoso.altice.com.itemhunter.viewholders;
+package agustinreinoso.altice.com.itemhunter.viewmodels;
 
 import android.arch.lifecycle.LiveData;
 import android.arch.lifecycle.MutableLiveData;

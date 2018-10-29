@@ -30,6 +30,12 @@
                 android:resource="@xml/file_provider" />
         </provider>
 
+        <service android:name=".services.FireBaseMessagingService">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+
         <activity
             android:name=".views.MainActivity"
             android:windowSoftInputMode="adjustPan">
@@ -40,6 +46,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".LoginActivity"></activity>
     </application>
 
 </manifest>

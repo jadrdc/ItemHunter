@@ -22,11 +22,13 @@ import com.google.android.gms.location.LocationServices;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.database.FirebaseDatabase;
 
+import java.io.File;
+
 import agustinreinoso.altice.com.itemhunter.R;
 import agustinreinoso.altice.com.itemhunter.adapters.FireBaseCustomAdapter;
 import agustinreinoso.altice.com.itemhunter.model.Product;
 import agustinreinoso.altice.com.itemhunter.utils.ConfigSetting;
-import agustinreinoso.altice.com.itemhunter.viewholders.ProductListViewModel;
+import agustinreinoso.altice.com.itemhunter.viewmodels.ProductListViewModel;
 
 /**
  * A simple {@link Fragment} subclass.

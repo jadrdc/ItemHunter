@@ -122,7 +122,7 @@ public class ProductCreationFragment extends Fragment {
                     final Product product = new Product();
                     product.setmName(mTxtName.getText().toString());
                     product.setmDescription(mTxtDescr.getText().toString());
-                    product.setmRatings(mRating.getNumStars());
+                    product.setmRatings(mRating.getRating());
                     product.setmCategory(mSpnCategory.getSelectedItem().toString());
                     product.setmImageUrl(Uri.fromFile(mOutput).toString());
                     product.setmAuthor("Jadrdc");

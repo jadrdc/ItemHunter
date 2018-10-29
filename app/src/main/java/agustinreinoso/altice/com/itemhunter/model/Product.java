@@ -5,7 +5,7 @@ public class Product {
     private String mDescription;
     private String mImageUrl;
     private String mAuthor;
-    private int mRatings;
+    private float mRatings;
 
     /*    public Uri getmUri() {
             return mUri;
@@ -53,11 +53,11 @@ public class Product {
         this.mAuthor = mAuthor;
     }
 
-    public int getmRatings() {
+    public float getmRatings() {
         return mRatings;
     }
 
-    public void setmRatings(int mRatings) {
+    public void setmRatings(float mRatings) {
         this.mRatings = mRatings;
     }
 
