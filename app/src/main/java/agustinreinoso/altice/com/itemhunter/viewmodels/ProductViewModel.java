@@ -14,6 +14,9 @@ public class ProductViewModel extends ViewModel {
         mRepostory = new ProductFireBaseRepository();
     }
 
+    public void setListener(ProductFireBaseRepository.ProductFireBaseActions actions) {
+        mRepostory.setmListener(actions);
+    }
 
     public void addProduct(final ProductDTO product) {
         mRepostory.saveProduct(product.getmUri(), product.getmProduct());

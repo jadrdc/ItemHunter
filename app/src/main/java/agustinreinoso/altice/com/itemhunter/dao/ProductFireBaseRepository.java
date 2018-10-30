@@ -30,12 +30,17 @@ public class ProductFireBaseRepository implements ProductRepository {
     private DatabaseReference mReference;
     private StorageReference mStorageReference;
 
+    public void setmListener(ProductFireBaseActions mListener) {
+        this.mListener = mListener;
+    }
+
+    private ProductFireBaseActions mListener;
+
     public ProductFireBaseRepository() {
         mDatabase = FirebaseDatabase.getInstance();
         mReference = mDatabase.getReference(ConfigSetting.PRODUCT_ROOT);
         mStorageReference = FirebaseStorage.getInstance().getReference();
     }
-
 
 
     @Override
@@ -70,14 +75,25 @@ public class ProductFireBaseRepository implements ProductRepository {
         newProduct.setValue(product).addOnSuccessListener(new OnSuccessListener<Void>() {
             @Override
             public void onSuccess(Void aVoid) {
+
+                mListener.successProduct();
             }
         }).addOnFailureListener(new OnFailureListener() {
             @Override
             public void onFailure(@NonNull Exception e) {
+
+                mListener.failureProduct();
             }
         });
     }
 
+
+    public interface ProductFireBaseActions {
+        void successProduct();
+
+        void failureProduct();
+
+    }
 
     @Override
     public void getProductsByCategories(String[] category) {

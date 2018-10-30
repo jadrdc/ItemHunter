@@ -13,12 +13,14 @@ import android.provider.MediaStore;
 import android.support.annotation.Nullable;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
+import android.support.v7.app.AlertDialog;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ProgressBar;
 import android.widget.RatingBar;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -34,6 +36,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import agustinreinoso.altice.com.itemhunter.R;
+import agustinreinoso.altice.com.itemhunter.dao.ProductFireBaseRepository;
 import agustinreinoso.altice.com.itemhunter.model.Product;
 import agustinreinoso.altice.com.itemhunter.dto.ProductDTO;
 import agustinreinoso.altice.com.itemhunter.viewmodels.ProductViewModel;
@@ -41,11 +44,12 @@ import agustinreinoso.altice.com.itemhunter.viewmodels.ProductViewModel;
 import static android.widget.Toast.makeText;
 
 
-public class ProductCreationFragment extends Fragment {
+public class ProductCreationFragment extends Fragment implements ProductFireBaseRepository.ProductFireBaseActions {
 
     private ProductViewModel mProductViewModel;
     private FusedLocationProviderClient mFusedLocationClient;
     private TextView mTxtName;
+    private ProgressBar mProgress;
     private TextView mTxtDescr;
     private Spinner mSpnCategory;
     private RatingBar mRating;
@@ -79,6 +83,7 @@ public class ProductCreationFragment extends Fragment {
         mTxtDescr = view.findViewById(R.id.product_description);
         mSpnCategory = view.findViewById(R.id.product_cat);
         mRating = view.findViewById(R.id.product_stars);
+        mProgress = view.findViewById(R.id.progresbar);
         return view;
 
     }
@@ -119,6 +124,7 @@ public class ProductCreationFragment extends Fragment {
                 if (mTxtName.getText().toString().equals("") || mTxtDescr.getText().toString().equals("") || mOutput == null) {
                     makeText(getContext(), "Debes de Completar todos los campos para poder guardar la photo", Toast.LENGTH_LONG).show();
                 } else {
+                    mProgress.setVisibility(View.VISIBLE);
                     final Product product = new Product();
                     product.setmName(mTxtName.getText().toString());
                     product.setmDescription(mTxtDescr.getText().toString());
@@ -144,6 +150,7 @@ public class ProductCreationFragment extends Fragment {
                             product.setmLat(String.valueOf(location.getLatitude()));
                             product.setmLng(String.valueOf(location.getLongitude()));
 
+                            mProductViewModel.setListener(ProductCreationFragment.this);
                             ProductDTO productDTO = new ProductDTO();
                             productDTO.setmProduct(product);
                             productDTO.setmUri(Uri.fromFile(mOutput));
@@ -178,6 +185,25 @@ public class ProductCreationFragment extends Fragment {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    @Override
+    public void successProduct() {
+        mProgress.setVisibility(View.INVISIBLE);
+        AlertDialog.Builder builder1 = new AlertDialog.Builder(getContext());
+        builder1.setMessage("Item Creado Satisfactoriamente");
+        builder1.setCancelable(true);
+        builder1.show();
+    }
+
+    @Override
+    public void failureProduct() {
+        mProgress.setVisibility(View.INVISIBLE);
+        mProgress.setVisibility(View.INVISIBLE);
+        AlertDialog.Builder builder1 = new AlertDialog.Builder(getContext());
+        builder1.setMessage("Error creando Item");
+        builder1.setCancelable(true);
+        builder1.show();
     }
 }
 
