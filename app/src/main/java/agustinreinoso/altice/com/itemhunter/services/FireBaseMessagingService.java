@@ -19,7 +19,8 @@ public class FireBaseMessagingService extends FirebaseMessagingService {
         super.onMessageReceived(remoteMessage);
 
 
-        sendNotification(remoteMessage.getNotification().getBody()
+        sendNotification(remoteMessage.getFrom().substring(8), remoteMessage.getNotification().getBody(),
+                remoteMessage.getNotification().getTitle()
         );
     }
 
@@ -29,13 +30,27 @@ public class FireBaseMessagingService extends FirebaseMessagingService {
         super.onNewToken(s);
     }
 
-    public void sendNotification(String msg) {
+    public void sendNotification(String topic, String msg,String description) {
         NotificationCompat.Builder builder = new NotificationCompat.Builder(this, "jadrdc");
+        int icon;
 
-        builder.setSmallIcon(R.drawable.ic_launcher_background)
+        if (topic.equals("Comida")) {
+            icon = R.drawable.food;
+        } else if (topic.equals("Bebida")) {
+            icon = R.drawable.drink;
+
+        } else if (topic.equals("Tecnologia")) {
+            icon = R.drawable.tech;
+
+        } else {
+            icon = R.drawable.cloth;
+
+        }
+
+        builder.setSmallIcon(icon)
                 .setContentText(msg)
                 .setContentTitle("Nuevo Objeto Reportado").setChannelId("jadrdc").
-                setPriority(NotificationCompat.PRIORITY_HIGH);
+                setPriority(NotificationCompat.PRIORITY_HIGH).setStyle(new NotificationCompat.BigTextStyle().bigText(description));
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             int importance = NotificationManager.IMPORTANCE_DEFAULT;
