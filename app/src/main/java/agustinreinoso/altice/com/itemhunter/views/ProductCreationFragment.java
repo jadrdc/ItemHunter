@@ -40,6 +40,7 @@ import agustinreinoso.altice.com.itemhunter.dao.ProductFireBaseRepository;
 import agustinreinoso.altice.com.itemhunter.model.Product;
 import agustinreinoso.altice.com.itemhunter.dto.ProductDTO;
 import agustinreinoso.altice.com.itemhunter.viewmodels.ProductViewModel;
+import agustinreinoso.altice.com.itemhunter.viewmodels.UserViewModel;
 
 import static android.widget.Toast.makeText;
 
@@ -57,6 +58,7 @@ public class ProductCreationFragment extends Fragment implements ProductFireBase
     static final int REQUEST_IMAGE_CAPTURE = 1;
     private double mLng;
     private double mLat;
+    private UserViewModel muserViewModel;
 
     public ProductCreationFragment() {
         // Required empty public constructor
@@ -94,6 +96,14 @@ public class ProductCreationFragment extends Fragment implements ProductFireBase
     public boolean onOptionsItemSelected(MenuItem item) {
 
         switch (item.getItemId()) {
+
+            case R.id.signout: {
+                muserViewModel = ViewModelProviders.of(getActivity()).get(UserViewModel.class);
+                muserViewModel.logOut();
+                Intent intent = new Intent(getActivity(),LoginActivity.class);
+                startActivity(intent);
+                return  true;
+            }
             case R.id.option_take_picture: {
                 StrictMode.VmPolicy.Builder builder = new StrictMode.VmPolicy.Builder();
                 StrictMode.setVmPolicy(builder.build());

@@ -4,19 +4,20 @@
     android:id="@+id/card_view_list"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:layout_marginBottom="10dp"
     app:cardCornerRadius="6dp"
-    app:cardElevation="6dp"
-    android:layout_marginBottom="10dp">
+    app:cardElevation="6dp">
 
     <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:padding="16dp">
 
-        <ImageView android:scaleType="centerCrop"
+        <ImageView
             android:id="@+id/item_image"
             android:layout_width="120dp"
             android:layout_height="120dp"
+            android:scaleType="centerCrop"
             android:src="@drawable/tech" />
 
         <TextView
@@ -27,6 +28,8 @@
             android:layout_toRightOf="@id/item_image"
             android:text="Laptop"
             android:textSize="30sp" />
+
+
 
         <ImageButton
             android:id="@+id/btn_share"

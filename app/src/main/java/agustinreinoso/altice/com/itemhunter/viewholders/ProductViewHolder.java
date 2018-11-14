@@ -40,7 +40,7 @@ public class ProductViewHolder extends RecyclerView.ViewHolder {
     public void draw(final Product product) {
 
         mTxtName.setText(product.getmName());
-        Picasso.get().load(product.getmImageUrl()).into(mImageProduct);
+        Picasso.get().load(product.getmImageUrl()).fit().into(mImageProduct);
         mRatingProdct.setRating(product.getmRatings());
         mRatingProdct.setEnabled(false);
         mLocation.setOnClickListener(new View.OnClickListener() {

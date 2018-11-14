@@ -1,5 +1,4 @@
 package agustinreinoso.altice.com.itemhunter.adapters;
-
 import android.support.annotation.NonNull;
 import android.view.LayoutInflater;
 import android.view.View;

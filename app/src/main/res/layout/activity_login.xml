@@ -18,6 +18,12 @@
             android:orientation="vertical"
             android:padding="16dp">
 
+            <ProgressBar
+                android:id="@+id/progress_bar"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="invisible" />
+
             <android.support.design.widget.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
@@ -54,7 +60,7 @@
                 android:orientation="horizontal">
 
                 <Button
-                    android:id="@+id/girisButton"
+                    android:id="@+id/btn_login"
                     android:layout_width="140dp"
                     android:layout_height="45dp"
                     android:layout_marginTop="10dp"
@@ -65,7 +71,7 @@
                     android:textColor="#FFFF" />
 
                 <Button
-                    android:id="@+id/uyeOlButton"
+                    android:id="@+id/btn_register"
                     android:layout_width="140dp"
                     android:layout_height="45dp"
                     android:layout_marginLeft="10dp"
