@@ -4,6 +4,7 @@ import android.Manifest;
 import android.arch.lifecycle.ViewModelProviders;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.graphics.Bitmap;
 import android.location.Location;
 import android.net.Uri;
 import android.os.Bundle;
@@ -23,6 +24,7 @@ import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.database.FirebaseDatabase;
 
 import java.io.File;
+import java.io.FileOutputStream;
 
 import agustinreinoso.altice.com.itemhunter.R;
 import agustinreinoso.altice.com.itemhunter.adapters.FireBaseCustomAdapter;
@@ -131,7 +133,13 @@ public class ProductListFragment extends Fragment implements FireBaseCustomAdapt
     }
 
     @Override
-    public void sharePicture(String path) {
-
+    public void share(String path) {
+        Intent share = new Intent(android.content.Intent.ACTION_SEND);
+        share.setType("text/plain");
+        share.putExtra(Intent.EXTRA_SUBJECT, "Title Of The Post");
+        share.putExtra(Intent.EXTRA_TEXT, path);
+        startActivity(share);
     }
+
+
 }

@@ -53,7 +53,7 @@ public class ProductViewHolder extends RecyclerView.ViewHolder {
         mShare.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                onItemClickListener.sharePicture(product.getmImageUrl());
+                onItemClickListener.share( product.getmImageUrl());
             }
         });
 

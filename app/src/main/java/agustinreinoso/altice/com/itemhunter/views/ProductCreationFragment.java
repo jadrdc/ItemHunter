@@ -100,9 +100,10 @@ public class ProductCreationFragment extends Fragment implements ProductFireBase
             case R.id.signout: {
                 muserViewModel = ViewModelProviders.of(getActivity()).get(UserViewModel.class);
                 muserViewModel.logOut();
-                Intent intent = new Intent(getActivity(),LoginActivity.class);
+                Intent intent = new Intent(getActivity(), LoginActivity.class);
                 startActivity(intent);
-                return  true;
+
+                break;
             }
             case R.id.option_take_picture: {
                 StrictMode.VmPolicy.Builder builder = new StrictMode.VmPolicy.Builder();

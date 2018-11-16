@@ -1,4 +1,5 @@
 package agustinreinoso.altice.com.itemhunter.adapters;
+import android.graphics.Bitmap;
 import android.support.annotation.NonNull;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -45,7 +46,8 @@ public class FireBaseCustomAdapter extends FirebaseRecyclerAdapter<Product, Prod
     public  interface  OnItemClick
     {
         void drawDirection(Product product);
-        void sharePicture(String path);
+        void share(String bitmap);
+
 
     }
 
