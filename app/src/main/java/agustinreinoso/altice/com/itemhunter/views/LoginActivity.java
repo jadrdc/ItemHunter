@@ -58,6 +58,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     public void onClick(View v) {
 
         if (v.getId() == R.id.sign_in_button) {
+            mProgressbar.setVisibility(View.VISIBLE);
             Intent signIntent = mUserViewModel.getMauthHelper().getValue().getmClient().getSignInIntent();
             startActivityForResult(signIntent, AUTH_API);
         }
@@ -83,6 +84,8 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
         if (requestCode == AUTH_API) {
             Task<GoogleSignInAccount> task = GoogleSignIn.getSignedInAccountFromIntent(data);
+            mProgressbar.setVisibility(View.INVISIBLE);
+
             login();
         }
     }

@@ -17,6 +17,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
+import android.widget.ImageView;
 
 import agustinreinoso.altice.com.itemhunter.R;
 import agustinreinoso.altice.com.itemhunter.viewmodels.ProductListViewModel;
@@ -32,6 +33,7 @@ public class UserProfileFragment extends Fragment implements CompoundButton.OnCh
     private CheckBox mchkTech;
     private CheckBox mchkDrink;
     private CheckBox mchkCloth;
+    private ImageView mPhoto;
 
     public UserProfileFragment() {
 
@@ -48,7 +50,7 @@ public class UserProfileFragment extends Fragment implements CompoundButton.OnCh
         mchkFood = view.findViewById(R.id.comid_not);
         mchkDrink = view.findViewById(R.id.bebida_not);
         mchkTech = view.findViewById(R.id.tecnologia_not);
-
+        mPhoto = view.findViewById(R.id.product_image);
 
         SharedPreferences preferences = getActivity().getSharedPreferences("subscripcion", Context.MODE_PRIVATE);
         mchkTech.setChecked(preferences.getBoolean(mchkTech.getTag().toString(), false));
@@ -91,6 +93,7 @@ public class UserProfileFragment extends Fragment implements CompoundButton.OnCh
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         mUserViewModel = ViewModelProviders.of(this).get(UserViewModel.class);
+
     }
 
 }

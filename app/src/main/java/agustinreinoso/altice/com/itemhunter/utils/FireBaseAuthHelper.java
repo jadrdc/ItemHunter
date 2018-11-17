@@ -1,6 +1,7 @@
 package agustinreinoso.altice.com.itemhunter.utils;
 
 import android.content.Context;
+import android.net.Uri;
 import android.support.annotation.NonNull;
 
 import com.google.android.gms.auth.api.Auth;
@@ -14,6 +15,7 @@ import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 public class FireBaseAuthHelper {
     private FirebaseAuth mAuth;
@@ -24,6 +26,11 @@ public class FireBaseAuthHelper {
 
     private FireBaseUserCreation mcreationResponse;
 
+
+    public  Uri getPhoto()
+    {
+        return  mAuth.getCurrentUser().getPhotoUrl();
+    }
     public void setLoginResponse(FireBaseLogin loginResponse) {
         this.loginResponse = loginResponse;
     }
