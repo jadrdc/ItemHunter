@@ -1,15 +1,20 @@
 # ItemHunter
 
-Este es el proyecto final del curso de Android de  avanzado de Altice ,el mismo consiste en una app que permita a los usuarios encontrar objetos especificos,donde los usuarios podran subir fotos de un objeto y dependiendo el tipo de objeto se le enviaran notificaciones a usuarios subscriptos a ese tipo de objetos con las coordenas y demas.
+This is the final project of an Course of Advanced Android Development given by **Altice Dominicana**.
+
+Itemhunter is an app that let the users uppload object information(image, location,object category) so that other user can receive push notification based on subscription to specific object categories with the relevant information to find these objects. 
+ 
+ The users can see a list of all the reported objects and can see the  traffic routes to go to the place where the object was
+ reported.
 
 ## Built With
 
-* [Gradle](https://gradle.org/) - Controlador de dependencia.
-* [Google Play Services Fused Location Provider](https://developers.google.com/location-context/fused-location-provider/) - Servicio de google play services para el manejo de las coordenadas.
-* [Firebase](https://firebase.google.com/docs/) - Manejo de persistencia de Imagenes y demas.
-* [Firebase Cloud Messaging](https://firebase.google.com/docs/cloud-messaging/?hl=es-419) - Manejo de Push Notification.
-* [Picasso](http://square.github.io/picasso/) - Manejo de Imagenes.
-* [Android JetPack](https://developer.android.com/jetpack/) - Arquitectura de Desarrollo del Proyecto.
+* [Gradle](https://gradle.org/) -  Build automation system.
+* [Google Play Services Fused Location Provider](https://developers.google.com/location-context/fused-location-provider/) - Google Play Service used to handle location change on the Smartphone.
+* [Firebase](https://firebase.google.com/docs/) - Persistences Management.
+* [Firebase Cloud Messaging](https://firebase.google.com/docs/cloud-messaging/?hl=es-419) - Push notifications.
+* [Picasso](http://square.github.io/picasso/) - Image handler.
+* [Android JetPack](https://developer.android.com/jetpack/) - Software Development Arquictecture.
 
 
 
